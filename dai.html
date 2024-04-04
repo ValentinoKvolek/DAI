@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación a merendar</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: violet; /* Cambia el color de fondo a violeta */
+    }
+    .container {
+        margin-top: 100px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>¿Queres ir a merendar conmigo?</h1>
+    <button id="siBtn">Sí</button>
+    <button id="noBtn">No</button>
+</div>
+
+<script>
+document.getElementById("siBtn").addEventListener("click", function() {
+    document.querySelector(".container").innerHTML = `
+        <h1>¿Estás segura?</h1>
+        <button id="siSeguraBtn">Sí</button>
+        <button id="noSeguraBtn">No</button>
+    `;
+    document.getElementById("siSeguraBtn").addEventListener("click", function() {
+        document.querySelector(".container").innerHTML = `
+            <h1>¡Genial! seguimos arreglando por wpp entonces!.</h1>
+            <img src=https://img.freepik.com/fotos-premium/gracioso-hamster-mejillas-rellenas-sonriendo-sentado-cama_118631-6253.jpg?w=1380>
+        `;
+    });
+    document.getElementById("noSeguraBtn").addEventListener("click", function() {
+        document.querySelector(".container").innerHTML = `
+            <h1>¿Entonces por qué dijiste que sí?</h1>
+            <img src="https://i.pinimg.com/564x/0c/7a/9e/0c7a9e0237eb1bdc6f08baddff5bebde.jpg" alt="Meme del hamster llorando">
+            <button onclick="location.reload()">Reintentar</button>
+        `;
+    });
+});
+
+document.getElementById("noBtn").addEventListener("click", function() {
+    document.querySelector(".container").innerHTML = `
+        <h1>¿Por qué no queres?</h1>
+        <button onclick="location.reload()">Reintentar</button>
+    `;
+});
+</script>
+</body>
+</html>
